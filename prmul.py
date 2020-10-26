@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image, ImageEnhance
 import PIL.Image
 
-s="test1.jpg"
+s="test4.jpg"
 img=Image.open(s)
 #img.show()
 img1=hf.preprocess(img)
