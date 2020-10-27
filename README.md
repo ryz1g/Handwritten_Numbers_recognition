@@ -11,4 +11,4 @@ Files included:-
 5) model_w.h5 - Contains weights for the Model.
 6) test4.jpg - A test image.
 
-Update 27/10/2020 - Model weights retrained on processed MNIST and performance improved in further testing.
+Update 27/10/2020 - Model weights retrained on processed MNIST and performance improved in further testing. A few exceptions dealt with.
