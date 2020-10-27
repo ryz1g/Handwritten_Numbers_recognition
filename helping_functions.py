@@ -19,9 +19,37 @@ def rectifier(arr):
         for j in range(b):
             if arr[i][j]<253:
                 arr[i][j]=0
-            #else :
-                #arr[i][j]=255
+            else :
+                arr[i][j]=255
     return arr
+
+def dot_remove(tt):
+    l,b=tt.shape
+    for i in range(l):
+        for j in range(b):
+            if tt[i][j]!=0:
+                c1,c2,c3,c4=(max(0,i-15),min(l-1,i+15),max(0,j-15),min(b-1,j+15))
+                flag=0
+                for loo in range(c3,c4):
+                    if tt[c1][loo]!=0 and c1!=i and loo!=j:
+                        flag=1
+                        break
+                for loo in range(c3,c4):
+                    if tt[c2][loo]!=0 and c2!=i and loo!=j:
+                        flag=1
+                        break
+                for loo in range(c1,c2):
+                    if tt[loo][c3]!=0 and loo!=i and c3!=j:
+                        flag=1
+                        break
+                for loo in range(c1,c2):
+                    if tt[loo][c4]!=0 and loo!=i and c4!=j:
+                        flag=1
+                        break
+                if flag==0:
+                    tt[i][j]=0
+        return tt
+
 
 def preprocess(img):
     img=img.convert(mode="L")
