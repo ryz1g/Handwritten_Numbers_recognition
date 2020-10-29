@@ -23,7 +23,7 @@ while(True):
         frame=cv2.putText(frame,str(op),(0,105), cv2.FONT_HERSHEY_SIMPLEX, 0.75,(150,150,150),2,cv2.LINE_AA)
         cv2.imshow('Testing: S:Start Detection | D:Stop Detection| Q:Quit', frame)
     if flag==0:
-        cv2.imshow('Testing: Press Q to quit', frame)
+        cv2.imshow('Testing: S:Start Detection | D:Stop Detection| Q:Quit', frame)
 
 
 v.release()
