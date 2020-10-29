@@ -29,9 +29,7 @@ def edge_detect(arr):
                   [0,-1,0]])
     arr=cv2.filter2D(arr, -1, fil2)
     arr=cv2.filter2D(arr, -1, fil2)
-    #arr1=cv2.filter2D(arr1, -1, fil1)
     arr=cv2.Canny(arr, 112, 479, 20.0)
-    #arr1=cv2.filter2D(arr1, -1, fil3)
     return arr
 
 
@@ -43,13 +41,6 @@ def new_rectifier(arr):
     img=img.crop((0,184,479,296))
     arr=np.array(img)
     arr=edge_detect(arr)
-    #for i in range(l):
-    #    for j in range(b):
-    #        if arr[i][j]>15:
-    #            arr[i][j]=255
-    #        else :
-    #            arr[i][j]=0
-    #arr=dot_remove(arr)
     return arr
 
 def rectifier(arr):
@@ -138,12 +129,8 @@ def output_multiple(img):
             ii=ii.resize((24,24))
             #ii=ii.crop((max(-0.1*b1,-25),-0.1*l1,min(1.1*b1,b1+25),1.1*l1))         #expanding horizons
             ii=ii.crop((-2,-2,26,26))
-            #enhancer=ImageEnhance.Contrast(ii)
-            #ii=enhancer.enhance(4)
             it=np.array(ii)
             it=rectifier(it)
-            #plt.imshow(it, cmap="gray")
-            #plt.show()
             c=0
             for i in range(28):
                 for j in range(28):
@@ -158,23 +145,6 @@ def output_multiple(img):
         opp=opp*10+output(i)[0]
     print(opp)
     return opp
-
-#def localize(arr):
-#    l,b=arr.shape
-#    ver_lim=[]
-#    alt=255
-#    for j in range(b):
-#    flag=0
-#        for i in range(l):
-#            if arr[i][j]==alt:
-#                ver_lim.append(j)
-#                flag=1
-#                break
-#        if flag==1:
-#            if alt==255:
-#                alt=0
-#            else:
-#                alt=255
 
 def split(arr):
     l,b=arr.shape
